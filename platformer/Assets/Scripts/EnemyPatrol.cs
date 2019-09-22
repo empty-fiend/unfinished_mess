@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CoolPatrol : MonoBehaviour
+public class EnemyPatrol : MonoBehaviour
 {
 
     public float speed = 5f, distance = 2f;

@@ -1,8 +1,8 @@
 ﻿<Properties StartupConfiguration="{7DF86CE5-98AD-27B9-C81C-95E986E42321}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CoolPatrol.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/EnemyPatrol.cs">
     <Files>
-      <File FileName="Assets/Scripts/CharScript.cs" Line="38" Column="41" />
-      <File FileName="Assets/Scripts/CoolPatrol.cs" Line="10" Column="9" />
+      <File FileName="Assets/Scripts/CharScript.cs" Line="38" Column="37" />
+      <File FileName="Assets/Scripts/EnemyPatrol.cs" Line="5" Column="20" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -10,7 +10,7 @@
           <Node name="platformer" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="CoolPatrol.cs" selected="True" />
+                <Node name="EnemyPatrol.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -20,7 +20,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="27ff0ee2-9fb9-4c6d-baf5-ae85011b4a1c" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="2eeac86d-401d-4f90-a1bb-3a9dbd593fbf" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

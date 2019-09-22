@@ -63,7 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\CharScript.cs" />
-    <Compile Include="Assets\Scripts\CoolPatrol.cs" />
+    <Compile Include="Assets\Scripts\EnemyPatrol.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>/Users/empty_fiend/Documents/BitBucket/platformer/platformer/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
