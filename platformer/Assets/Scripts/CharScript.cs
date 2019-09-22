@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class CharScript : MonoBehaviour
 {
-    public float walkSpeed = 10f, runSpeed = 20f, jumpForce = 100f;
+    public float walkSpeed = 3f, runSpeed = 5f, jumpForce = 7f, JumpTime = 0.25f;
     public LayerMask whatIsGround;
     public Transform groundCheck, bgPlatform;
-    bool facingRight = true, grounded;
-    float groundRadius = 0.2f, speed;
+    bool facingRight = true, grounded, isJumping;
+    float groundRadius = 0.2f, speed, jumpTimeCounter;
     Animator anim;
     Rigidbody2D rb;
    
@@ -27,9 +27,29 @@ public class CharScript : MonoBehaviour
     {
         if (grounded && Input.GetButtonDown("Jump"))
         {
+            isJumping = true;
+            jumpTimeCounter = JumpTime;
             anim.SetBool("Ground", false);
-            rb.AddForce(new Vector2(0, jumpForce));
+            rb.velocity = Vector2.up * jumpForce;
         }
+
+        if (Input.GetButton("Jump") && isJumping == true)
+        {
+            if (jumpTimeCounter > 0)
+            {
+                rb.velocity = Vector2.up * jumpForce;
+                jumpTimeCounter -= Time.deltaTime;
+            }
+            else
+                isJumping = false;
+
+        }
+
+        if (Input.GetButtonUp("Jump"))
+        {
+            isJumping = false;
+        }
+
 
         if (Input.GetButtonDown("Run"))
             speed = runSpeed;
