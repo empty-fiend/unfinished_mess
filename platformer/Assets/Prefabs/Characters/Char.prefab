@@ -157,6 +157,7 @@ MonoBehaviour:
   walkSpeed: 3
   runSpeed: 5
   jumpForce: 400
+  JumpTime: 0.25
   whatIsGround:
     serializedVersion: 2
     m_Bits: 1559
