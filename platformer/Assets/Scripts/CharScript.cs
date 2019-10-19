@@ -10,12 +10,24 @@ public class CharScript : MonoBehaviour
                  jumpTime = 3.5f;
     public LayerMask whatIsGround;
     public Transform groundCheck;
-    bool movingRight = true, grounded, isJumping;
-    float groundRadius = 0.2f, speed, jumpTimeCounter;
+    bool movingRight = true, isJumping;
+    float speed, jumpTimeCounter;
     Animator anim;
     Rigidbody2D rb;
-   
 
+    bool grounded()
+    {
+      Vector2 position = groundCheck.position;
+      Vector2 direction = Vector2.down;
+      float distance = 0.1f;
+
+      RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, whatIsGround);
+      if (hit.collider != null )
+      {
+        return true;
+      }
+       return false;
+    }
 
 
     // Start is called before the first frame update
@@ -33,7 +45,7 @@ public class CharScript : MonoBehaviour
         else if (Input.GetButtonUp("Run"))
             speed = walkSpeed;
 
-        if (grounded)
+        if (grounded())
         {
             isJumping = true;
             jumpTimeCounter = jumpTime;
@@ -57,8 +69,7 @@ public class CharScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
-        anim.SetBool("Ground", grounded); 
+        anim.SetBool("Ground", grounded());
         float move = Input.GetAxisRaw ("Horizontal");
         anim.SetFloat("Speed", Mathf.Abs(move));
         rb.velocity = new Vector2(move * speed, rb.velocity.y);
@@ -72,5 +83,6 @@ public class CharScript : MonoBehaviour
             transform.eulerAngles = new Vector3(0, 0, 0);
             movingRight = true;
         }
+
     }
 }

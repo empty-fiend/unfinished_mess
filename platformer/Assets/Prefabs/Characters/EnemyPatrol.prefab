@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3880103280849000849
+--- !u!1 &582072680837989813
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,24 +8,24 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3880103280849000848}
+  - component: {fileID: 8331936256142887350}
   m_Layer: 0
-  m_Name: Ground Detection
+  m_Name: Groundcheck
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3880103280849000848
+--- !u!4 &8331936256142887350
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3880103280849000849}
-  m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0679, y: -0.062, z: 0}
-  m_LocalScale: {x: -0.2, y: 0.2, z: 1}
+  m_GameObject: {fileID: 582072680837989813}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.069, z: 0}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 3880103281596025322}
   m_RootOrder: 0
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 3880103281596025321}
   - component: {fileID: 3880103281596025320}
   - component: {fileID: 3880103281596025317}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: EnemyPatrol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62,7 +62,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children:
-  - {fileID: 3880103280849000848}
+  - {fileID: 8331936256142887350}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -129,7 +129,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   distance: 1
-  groundDetection: {fileID: 3880103280849000848}
+  groundDetection: {fileID: 8331936256142887350}
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!50 &3880103281596025321
 Rigidbody2D:
   serializedVersion: 4
@@ -158,9 +161,9 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3880103281596025323}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: ede3cfd30c4604273895d233421ad88a, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
