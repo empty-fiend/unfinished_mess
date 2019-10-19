@@ -9,31 +9,13 @@ public class Health : MonoBehaviour
 	public Image[] hearts;
 	public Sprite fullHeart, emptyHeart;
   public Transform player;
-	public LayerMask whoIsTheEnemy;
-	public Collider2D playerCol;
-	public float invicibilityTime = 2.5f;
-	bool enemyTouched = false, enemyKill = false, invicible = false;
-	float invincebilityCounter;
-	private SpriteRenderer playerSprite;
-	Rigidbody2D rb;
 
-		IEnumerator PlayerBlink()
-		{
-			while (invicible == true)
-			{
-				playerSprite.enabled = false;
-				yield return new WaitForSeconds(0.1f);
-				playerSprite.enabled = true;
-				yield return new WaitForSeconds(0.1f);
-			}
-		}
 
     // Start is called before the first frame update
     void Start()
     {
-			rb = GetComponent<Rigidbody2D>();
-			invicible = false;
-			playerSprite = this.gameObject.GetComponent<SpriteRenderer>();
+			
+
     }
 
     // Update is called once per frame
@@ -54,29 +36,5 @@ public class Health : MonoBehaviour
 						hearts[i].enabled = false;
 				}
 
-				if (health > 0)
-				{
-					enemyTouched = Physics2D.IsTouchingLayers(playerCol, whoIsTheEnemy);
-					if (enemyTouched && !invicible)
-					{
-						rb.AddForce(Vector3.left*500, ForceMode2D.Impulse);
-						health -= 1;
-						invincebilityCounter = invicibilityTime;
-						invicible = true;
-					}
-					if (invicible && invincebilityCounter > 0)
-					{
-						StartCoroutine(PlayerBlink());
-						invincebilityCounter -= Time.deltaTime;
-					}
-					else
-						if (invincebilityCounter < 0)
-						{
-							invicible = false;
-							playerSprite.enabled = true;
-						}
-				}
-				else
-					this.gameObject.SetActive(false);
     }
 }

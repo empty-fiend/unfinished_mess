@@ -82,6 +82,7 @@ public class CharScript : MonoBehaviour
         {
             transform.eulerAngles = new Vector3(0, 0, 0);
             movingRight = true;
+
         }
 
     }
