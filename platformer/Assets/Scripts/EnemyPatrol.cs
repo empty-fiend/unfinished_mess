@@ -9,6 +9,9 @@ public class EnemyPatrol : MonoBehaviour
     public Transform groundDetection;
     private bool movingRight = true;
     public LayerMask whatIsGround;
+    public Collider2D myDeathCollider;
+    bool amIDeadYet;
+
 
 
     // Start is called before the first frame update
@@ -35,5 +38,12 @@ public class EnemyPatrol : MonoBehaviour
                 movingRight = true;
             }
         }
+        amIDeadYet = Physics2D.IsTouching(myDeathCollider, this.GetComponent<Collider2D>());
+        if (amIDeadYet)
+        {
+            this.gameObject.SetActive(false);
+            GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>().velocity = Vector2.up * 5;
+        }
+
     }
 }

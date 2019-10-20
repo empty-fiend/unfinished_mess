@@ -8,11 +8,12 @@ public class DamageControl : MonoBehaviour
 {
 	public LayerMask whoIsTheEnemy;
 	public float invicibilityTime = 2.5f;
-	bool enemyTouched = false, enemyKill = false, invicible = false;
+	bool enemyTouched = false, invicible = false;
 	float invincebilityCounter;
   Health HealthManager;
   SpriteRenderer playerSprite;
 	Rigidbody2D rb;
+	public Transform groundCheck;
 
   		IEnumerator PlayerBlink()
   		{
@@ -37,7 +38,6 @@ public class DamageControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
       				if (HealthManager.health > 0)
       				{
       					enemyTouched = Physics2D.IsTouchingLayers(this.GetComponent<Collider2D>(), whoIsTheEnemy);
@@ -57,10 +57,14 @@ public class DamageControl : MonoBehaviour
       						if (invincebilityCounter < 0)
       						{
       							invicible = false;
+										if (playerSprite.enabled == false)
       							playerSprite.enabled = true;
       						}
       				}
       				else
-      					SceneManager.LoadScene("SampleScene");
+							{
+								HealthManager.lifeCounter -= 1;
+				        SceneManager.LoadScene("SampleScene");
+							}
     }
 }

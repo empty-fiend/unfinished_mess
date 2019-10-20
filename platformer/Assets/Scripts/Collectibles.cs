@@ -4,26 +4,35 @@ using UnityEngine;
 
 public class Collectibles : MonoBehaviour
 {
-  public bool PickedUp = false;
-  bool getHeart = false;
+  bool PickedUp = false;
   Collider2D heart;
   Health HealthManager;
     // Start is called before the first frame update
     void Start()
     {
-      PickedUp = false;
-      heart = GameObject.FindWithTag("heartContainer").GetComponent<Collider2D>();
-      HealthManager = GetComponent<Health>();
+      HealthManager = GameObject.FindWithTag("Player").GetComponent<Health>();
     }
 
     // Update is called once per frame
     void Update()
     {
-      getHeart = Physics2D.IsTouching(this.GetComponent<Collider2D>(), heart);
-      if (getHeart == true && HealthManager.health < HealthManager.numOfHearts)
+      PickedUp = Physics2D.IsTouching(this.GetComponent<Collider2D>(), GameObject.FindWithTag("Player").GetComponent<Collider2D>());
+      if (PickedUp == true)
       {
+        if (this.gameObject.tag == GameObject.FindWithTag("heart").tag && HealthManager.health < HealthManager.numOfHearts)
+        {
           HealthManager.health += 1;
-          PickedUp = true;
+          this.gameObject.SetActive(false);
+          PickedUp = false;
+        }
+        else
+        if (this.gameObject.tag == GameObject.FindWithTag("extraLife").tag)
+        {
+          HealthManager.lifeCounter += 1;
+          this.gameObject.SetActive(false);
+          PickedUp = false;
+        }
+
       }
 
     }

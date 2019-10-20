@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-	public int health, numOfHearts;
+	public int health, numOfHearts, lifeCounter = 3;
 	public Image[] hearts;
 	public Sprite fullHeart, emptyHeart;
   public Transform player;
@@ -14,7 +14,6 @@ public class Health : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-			
 
     }
 

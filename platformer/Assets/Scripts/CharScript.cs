@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement; //So you can use SceneManager
 
 public class CharScript : MonoBehaviour
 {
@@ -62,7 +63,8 @@ public class CharScript : MonoBehaviour
         if (Input.GetButtonUp("Jump"))
             isJumping = false;
 
-
+        if (Input.GetButtonDown("Reset"))
+            SceneManager.LoadScene("SampleScene");
     }
 
 

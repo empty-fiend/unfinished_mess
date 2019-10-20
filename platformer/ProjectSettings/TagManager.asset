@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - heartContainer
+  - heart
+  - extraLife
+  - CMcamera
   layers:
   - Default
   - TransparentFX
