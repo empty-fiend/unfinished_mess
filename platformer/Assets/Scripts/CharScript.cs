@@ -63,8 +63,6 @@ public class CharScript : MonoBehaviour
         if (Input.GetButtonUp("Jump"))
             isJumping = false;
 
-        if (Input.GetButtonDown("Reset"))
-            SceneManager.LoadScene("SampleScene");
     }
 
 

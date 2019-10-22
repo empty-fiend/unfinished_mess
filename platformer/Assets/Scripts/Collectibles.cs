@@ -26,12 +26,7 @@ public class Collectibles : MonoBehaviour
           PickedUp = false;
         }
         else
-        if (this.gameObject.tag == GameObject.FindWithTag("extraLife").tag)
-        {
-          HealthManager.lifeCounter += 1;
-          this.gameObject.SetActive(false);
           PickedUp = false;
-        }
 
       }
 

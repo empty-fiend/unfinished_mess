@@ -8,6 +8,7 @@ public class DamageControl : MonoBehaviour
 {
 	public LayerMask whoIsTheEnemy;
 	public float invicibilityTime = 2.5f;
+	public bool dead = false;
 	bool enemyTouched = false, invicible = false;
 	float invincebilityCounter;
   Health HealthManager;
@@ -28,6 +29,7 @@ public class DamageControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+				dead = false;
         invicible = false;
         rb = GetComponent<Rigidbody2D>();
         playerSprite = this.gameObject.GetComponent<SpriteRenderer>();
@@ -64,7 +66,7 @@ public class DamageControl : MonoBehaviour
       				else
 							{
 								HealthManager.lifeCounter -= 1;
-				        SceneManager.LoadScene("SampleScene");
+								dead = true;
 							}
     }
 }
