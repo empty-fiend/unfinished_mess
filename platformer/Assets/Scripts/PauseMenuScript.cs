@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PauseMenuScript : MonoBehaviour
 {
   public static bool isPaused = false;
-  public GameObject PauseMenuUI, DeathScreen;
+  public GameObject PauseMenuUI, DeathScreen, PauseActiveButton, DeathActiveButton;
   DamageControl DamageControl;
 
     void Start()
@@ -19,6 +20,7 @@ public class PauseMenuScript : MonoBehaviour
     {
       DeathScreen.SetActive(true);
       Time.timeScale = 0f;
+      DeathActiveButton.GetComponent<Button>().Select();
     }
 
     void Pause()
@@ -26,6 +28,7 @@ public class PauseMenuScript : MonoBehaviour
       PauseMenuUI.SetActive(true);
       isPaused = true;
       Time.timeScale = 0f;
+      PauseActiveButton.GetComponent<Button>().Select();
     }
 
     // Update is called once per frame
@@ -44,13 +47,15 @@ public class PauseMenuScript : MonoBehaviour
             Resume();
           else
             Pause();
+    }
 
+    void FixedUpdate()
+    {
       if (DamageControl.dead)
         Dead();
       else
         return;
     }
-
     public void Quit()
     {
       Application.Quit();

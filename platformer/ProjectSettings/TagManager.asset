@@ -8,6 +8,7 @@ TagManager:
   - heart
   - extraLife
   - CMcamera
+  - EventSystem
   layers:
   - Default
   - TransparentFX

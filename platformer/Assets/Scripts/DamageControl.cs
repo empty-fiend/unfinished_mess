@@ -38,14 +38,13 @@ public class DamageControl : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
       				if (HealthManager.health > 0)
       				{
       					enemyTouched = Physics2D.IsTouchingLayers(this.GetComponent<Collider2D>(), whoIsTheEnemy);
       					if (enemyTouched && !invicible)
       					{
-      						rb.AddForce(Vector3.left*500, ForceMode2D.Impulse);
       						HealthManager.health -= 1;
       						invincebilityCounter = invicibilityTime;
       						invicible = true;

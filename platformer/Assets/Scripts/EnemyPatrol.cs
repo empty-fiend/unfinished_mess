@@ -41,8 +41,9 @@ public class EnemyPatrol : MonoBehaviour
         amIDeadYet = Physics2D.IsTouching(myDeathCollider, this.GetComponent<Collider2D>());
         if (amIDeadYet)
         {
-            this.gameObject.SetActive(false);
-            GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>().velocity = Vector2.up * 5;
+          GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>().velocity = Vector2.up * 7;
+          this.gameObject.GetComponent<Collider2D>().enabled = false;
+          this.gameObject.SetActive(false);
         }
 
     }
