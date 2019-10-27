@@ -1,19 +1,31 @@
 fileFormatVersion: 2
-guid: d32776c3719244128b32c432e71485bc
+guid: 17a52f7ebaa2f42b1a97377c161efec1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7353071261304621213
-    second: ui_parts_0
+      213: -2346302928887187388
+    second: bullet_0
   - first:
-      213: -3676167439520774202
-    second: ui_parts_1
+      213: 5379323082974078785
+    second: bullet_1
   - first:
-      213: 3747658963817374158
-    second: ui_parts_2
+      213: -2863499236874410579
+    second: bullet_2
   - first:
-      213: -5254645021730588742
-    second: ui_parts_3
+      213: 6740024121541949626
+    second: bullet_3
+  - first:
+      213: -2978653956524333172
+    second: icons_0
+  - first:
+      213: -299690340437171572
+    second: icons_1
+  - first:
+      213: -1290855366162983238
+    second: icons_2
+  - first:
+      213: -2248273014285675650
+    second: icons_3
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -57,7 +69,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -98,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ui_parts_0
+      name: icons_0
       rect:
         serializedVersion: 2
         x: 0
@@ -112,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d7f28f31485bb431e83bb96ff5f6ddaa
-      internalID: -7353071261304621213
+      spriteID: 87e8fd73f39244eb5b3cedc658ea2c8d
+      internalID: -2978653956524333172
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ui_parts_1
+      name: icons_1
       rect:
         serializedVersion: 2
         x: 16
@@ -133,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 611b7779d70fb4f4cbba246c037b37fe
-      internalID: -3676167439520774202
+      spriteID: 1f44d7cb2a70b43858fc7363d32d5eb5
+      internalID: -299690340437171572
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ui_parts_2
+      name: icons_2
       rect:
         serializedVersion: 2
         x: 32
@@ -154,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e4a1323e320445fc8b0fe6e1b3ad76e
-      internalID: 3747658963817374158
+      spriteID: 4e3fd3331e77442e6874e84bfa2a9e6d
+      internalID: -1290855366162983238
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ui_parts_3
+      name: icons_3
       rect:
         serializedVersion: 2
         x: 48
@@ -175,8 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d988b8048ac64b308c33d4a77858d34
-      internalID: -5254645021730588742
+      spriteID: 667fbfd4a4e934597950d47151b78bc1
+      internalID: -2248273014285675650
       vertices: []
       indices: 
       edges: []
@@ -193,7 +205,7 @@ TextureImporter:
     secondaryTextures: []
   spritePackingTag: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
+  pSDShowRemoveMatteOption: 1
   userData: 
   assetBundleName: 
   assetBundleVariant: 

@@ -9,6 +9,7 @@ TagManager:
   - extraLife
   - CMcamera
   - EventSystem
+  - DeathCollider
   layers:
   - Default
   - TransparentFX
