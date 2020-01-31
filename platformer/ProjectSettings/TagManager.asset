@@ -3,13 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - heartContainer
-  - heart
-  - extraLife
-  - CMcamera
-  - EventSystem
-  - DeathCollider
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -19,11 +13,11 @@ TagManager:
   - UI
   - 
   - 
-  - Player
   - Ground
-  - GroundBG
-  - Enemy
-  - Boss
+  - BackGround
+  - 
+  - 
+  - 
   - 
   - 
   - 
